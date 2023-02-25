@@ -15,6 +15,7 @@ jobs:
             python3 -m pygbag --ume_block 0 --build $GITHUB_WORKSPACE/main.py
             cp convert.html build/web/
             cp converter.js build/web/
+            cp techsupport.html build/web/
     - name : "Upload to GitHub pages"
       uses: JamesIves/github-pages-deploy-action@4.1.7
       with:
