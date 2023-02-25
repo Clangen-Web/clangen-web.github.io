@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    try {
+        function download(content, fileName, contentType) {
+            var a = document.createElement("a");
+            var file = new Blob([content], {type: contentType});
+            a.href = URL.createObjectURL(file);
+            a.download = fileName;
+            a.click();
+        }
+        download(JSON.stringify(localStorage), 'json.txt', 'text/plain');
+    } catch(e) {
+        alert('Error shown on page')
+        document.getElementById('out').innerText = e
+    }
+    </script>
+    <div id="out"></div>
+    
+</body>
+</html>
